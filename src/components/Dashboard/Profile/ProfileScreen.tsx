@@ -1,5 +1,7 @@
 import React from 'react';
 import { StyledWrapper, StyledAvatar, StyledName, StyledLogin, StyledRepositories, StyledInfos } from './Profile.styled';
+import { IOrg } from '../../../types/organization';
+import { Organizations } from '../Organizations';
 
 interface Props {
     avatar: string;
@@ -8,9 +10,10 @@ interface Props {
     bio: string;
     reposNumber: number;
     commitsNumber: number;
+    organizations: IOrg[];
 }
 
-export const ProfileScreen: React.FC<Props> = ({ avatar, name, login, bio, reposNumber, commitsNumber}) => {
+export const ProfileScreen: React.FC<Props> = ({ avatar, name, login, bio, reposNumber, commitsNumber, organizations }) => {
     return (
         <StyledWrapper>
             <StyledAvatar src={avatar} />
@@ -20,6 +23,7 @@ export const ProfileScreen: React.FC<Props> = ({ avatar, name, login, bio, repos
                 <StyledLogin>{bio}</StyledLogin>
                 <StyledRepositories><strong>{reposNumber}</strong> Repositories</StyledRepositories>
                 <StyledRepositories><strong>{commitsNumber}</strong> Commits</StyledRepositories>
+                <Organizations organizations={organizations} />
             </StyledInfos>
         </StyledWrapper>
     )

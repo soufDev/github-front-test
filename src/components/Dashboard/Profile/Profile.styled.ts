@@ -11,6 +11,7 @@ export const StyledAvatar = styled.img`
     border-radius: 3px;
     @media (max-width: 414px) {
         width: 100%;
+        border-radius: 0px;
     }
 `;
 

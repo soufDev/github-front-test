@@ -5,7 +5,7 @@ import { ProfileScreen } from './ProfileScreen';
 export const Profile = () => {
     return (
         <ProfileContainer>
-            {({ user }) => (
+            {({ user, organizations }) => (
                 <ProfileScreen
                     avatar={user.avatar}
                     bio={user.bio}
@@ -13,6 +13,7 @@ export const Profile = () => {
                     login={user.login}
                     reposNumber={user.reposNumber}
                     commitsNumber={user.commitsNumber}
+                    organizations={organizations}
                 />
             )}
         </ProfileContainer>
